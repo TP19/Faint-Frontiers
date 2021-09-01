@@ -1,7 +1,7 @@
 # Faint Frontiers Open Source Edition
 This is the open source version of the game.
 
-Play the released prototype v0.4 with the newest assets of the game here: https://skydrifter.itch.io/faint-frointiers-v04
+Play the released prototype v0.4 with the newest assets of the game here: https://skydrifter.itch.io/faint-frontiers
 
 The zip file has the complete godot project excluding the sprites and worlds as in the released prototype. It was lastly tested and can be run with Godot Version 3.3. Here you will find assets that were used at the primary development stages of the game. 
 
