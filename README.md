@@ -1,4 +1,4 @@
-# Faint Frontiers: Developer Version
+# Faint Frontiers: Developer Edition
 This is an experimental and cutting-edge release of the game.
 
 
