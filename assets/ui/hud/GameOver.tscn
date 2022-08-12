@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/main_menu/game_over_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/hud/GameScore.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/hud/GameTime.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/fonts/aquarius_32.tres" type="DynamicFont" id=5]
+
+[node name="GameOver" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.75
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreData" type="HBoxContainer" parent="Menu"]
+margin_top = 84.0
+margin_right = 640.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="Score" type="Label" parent="Menu/ScoreData"]
+margin_left = 186.0
+margin_right = 354.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 5 )
+text = "Score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerScore" type="Label" parent="Menu/ScoreData"]
+margin_left = 358.0
+margin_right = 454.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "420"
+align = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerData" type="HBoxContainer" parent="Menu"]
+margin_top = 137.0
+margin_right = 640.0
+margin_bottom = 186.0
+alignment = 1
+
+[node name="Time" type="Label" parent="Menu/TimerData"]
+margin_left = 144.0
+margin_right = 272.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 5 )
+text = "Time:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerTime" type="Label" parent="Menu/TimerData"]
+margin_left = 276.0
+margin_right = 496.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 5 )
+text = "360.1337"
+align = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prompt" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.95
+custom_fonts/font = ExtResource( 5 )
+text = "Press F1 to continue"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ending" type="AudioStreamPlayer" parent="."]
+autoplay = true

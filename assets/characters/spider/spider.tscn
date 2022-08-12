@@ -1,0 +1,196 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://assets/characters/Hurtbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/characters/WonderController.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/characters/spider/venom_spider.gd" type="Script" id=3]
+[ext_resource path="res://assets/characters/PlayerDetectionZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/characters/Hitbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/characters/AttackDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/characters/spider/Spider_Enemy.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle Left"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle Right"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Run Left"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Run Right"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 7 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Idle Right"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Idle Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
+blend_point_0/pos = Vector2( -1, 1 )
+blend_point_1/node = SubResource( 11 )
+blend_point_1/pos = Vector2( 1, 1 )
+blend_point_2/node = SubResource( 12 )
+blend_point_2/pos = Vector2( -1, -1.1 )
+blend_point_3/node = SubResource( 13 )
+blend_point_3/pos = Vector2( 1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "Run Left"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Run Left"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "Run Left"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Run Right"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Run Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=22]
+blend_point_0/node = SubResource( 17 )
+blend_point_0/pos = Vector2( -1, 1 )
+blend_point_1/node = SubResource( 18 )
+blend_point_1/pos = Vector2( -1, -1.1 )
+blend_point_2/node = SubResource( 19 )
+blend_point_2/pos = Vector2( -1, -1 )
+blend_point_3/node = SubResource( 20 )
+blend_point_3/pos = Vector2( 1, 1 )
+blend_point_4/node = SubResource( 21 )
+blend_point_4/pos = Vector2( 1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/Idle/node = SubResource( 14 )
+states/Idle/position = Vector2( 403, 85 )
+states/Run/node = SubResource( 22 )
+states/Run/position = Vector2( 541, 85 )
+transitions = [ "Idle", "Run", SubResource( 23 ), "Run", "Idle", SubResource( 24 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+hframes = 20
+frame = 1
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Idle Left" = SubResource( 1 )
+"anims/Idle Right" = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+"anims/Run Left" = SubResource( 15 )
+"anims/Run Right" = SubResource( 16 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 9 )
+parameters/Idle/blend_position = Vector2( 0, -0.00862074 )
+parameters/Run/blend_position = Vector2( 0.0047543, -0.0103092 )
+
+[node name="WonderController" parent="." instance=ExtResource( 2 )]
+
+[node name="Hitbox" parent="." instance=ExtResource( 5 )]
+
+[node name="Hurtbox" parent="." instance=ExtResource( 1 )]
+
+[node name="AttackDetectionZone" parent="." instance=ExtResource( 6 )]
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

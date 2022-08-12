@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/ui/main_menu/main_menu_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/main_menu/map_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/fonts/aquarius_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/main_menu/map_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/main_menu/Play.gd" type="Script" id=5]
+[ext_resource path="res://assets/ui/fonts/aquarius_16.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/ui/main_menu/map_0.png" type="Texture" id=7]
+
+[node name="Play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelection" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.0
+margin_top = -126.0
+margin_right = 224.0
+margin_bottom = 126.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopRow" type="HBoxContainer" parent="LevelSelection"]
+margin_top = 35.0
+margin_right = 448.0
+margin_bottom = 124.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelOne" type="VBoxContainer" parent="LevelSelection/TopRow"]
+margin_left = 61.0
+margin_right = 167.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/TopRow/LevelOne"]
+margin_right = 106.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="LevelSelection/TopRow/LevelOne"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Classic"
+align = 1
+
+[node name="LevelTwo" type="VBoxContainer" parent="LevelSelection/TopRow"]
+margin_left = 171.0
+margin_right = 277.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/TopRow/LevelTwo"]
+margin_right = 106.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 4 )
+
+[node name="Title" type="Label" parent="LevelSelection/TopRow/LevelTwo"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Soon..."
+align = 1
+
+[node name="LevelThree" type="VBoxContainer" parent="LevelSelection/TopRow"]
+margin_left = 281.0
+margin_right = 387.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/TopRow/LevelThree"]
+margin_right = 106.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="LevelSelection/TopRow/LevelThree"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Locked"
+align = 1
+
+[node name="BottomRow" type="HBoxContainer" parent="LevelSelection"]
+margin_top = 128.0
+margin_right = 448.0
+margin_bottom = 217.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelFour" type="VBoxContainer" parent="LevelSelection/BottomRow"]
+margin_left = 61.0
+margin_right = 167.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/BottomRow/LevelFour"]
+margin_right = 106.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="LevelSelection/BottomRow/LevelFour"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Locked"
+align = 1
+
+[node name="LevelFive" type="VBoxContainer" parent="LevelSelection/BottomRow"]
+margin_left = 171.0
+margin_right = 277.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/BottomRow/LevelFive"]
+margin_right = 106.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="LevelSelection/BottomRow/LevelFive"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Locked"
+align = 1
+
+[node name="LevelSix" type="VBoxContainer" parent="LevelSelection/BottomRow"]
+margin_left = 281.0
+margin_right = 387.0
+margin_bottom = 89.0
+
+[node name="Cover" type="TextureButton" parent="LevelSelection/BottomRow/LevelSix"]
+margin_right = 106.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="LevelSelection/BottomRow/LevelSix"]
+margin_top = 64.0
+margin_right = 106.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 6 )
+text = "Locked"
+align = 1
+
+[node name="Return" type="Button" parent="."]
+focus_mode = 0
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "Return"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Return" to="Return" method="_on_Return_pressed"]

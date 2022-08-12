@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/forbidden planet.ogg-460c1519506cf3dfa483899edcec26ef.oggstr"
+
+[deps]
+
+source_file="res://assets/music/forbidden planet.ogg"
+dest_files=[ "res://.import/forbidden planet.ogg-460c1519506cf3dfa483899edcec26ef.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
