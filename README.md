@@ -1,5 +1,5 @@
 # Faint Frontiers: Developer Edition
-This is an experimental and cutting-edge release of the game.
+This is an experimental and cutting-edge release of the game. It is free and open-source!
 
 
 The repository has the complete godot project excluding the sprites and worlds as in the released prototype. The assets used here were made specially for this version.
