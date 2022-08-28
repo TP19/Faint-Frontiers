@@ -52,10 +52,9 @@ func isometric_to_cartesian(iso):
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("menu"):
-		Transition.change_scenes(MainMenu)
-		
-##		MenuAudio.play()
-#		get_tree().change_scene(MainMenu)
+		#MenuAudio.play()
+		get_tree().change_scene(MainMenu)
+		#Transition.change_scenes(MainMenu)
 		
 	match state:
 		MOVE:
@@ -164,7 +163,7 @@ func move():
 	
 func damage_state(delta):
 	$Sprite.modulate = Color(2, 1, 1)
-	modulate.a8 = 200
+	#modulate.a8 = 200
 	
 #func shield_state(delta):
 #	animationState.travel("Shield")
@@ -251,6 +250,7 @@ func impact_slowdown(time_scale, duration):
 func _ready():
 	Global.points = 0
 	Global.elapsed_time = 0
+	
 	var audioFiles = []
 	audioFiles.append(preload("res://assets/music/skyline5.ogg"))
 	audioFiles.append(preload("res://assets/music/8nine.ogg"))

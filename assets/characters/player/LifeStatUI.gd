@@ -1,6 +1,6 @@
 extends Control
 
-onready var LifeStat = $Camera2D/DamageEffect1
+onready var LifeStat = $Surface/Player/ViewportCamera/CriticalHealth
 var health = LifeStat setget health_less_than
 
 func health_less_than(value):

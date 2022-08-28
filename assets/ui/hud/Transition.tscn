@@ -7,7 +7,7 @@ resource_name = "fade"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Display/Black:color")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,3 +34,7 @@ color = Color( 0, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true

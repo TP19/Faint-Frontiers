@@ -7,12 +7,12 @@ func _ready():
 	$Return.connect("pressed", self, "Return")
 
 func Classic():
-	#get_tree().change_scene("res://assets/worlds/World.tscn")
-	Transition.change_scenes("res://assets/worlds/World.tscn")
+	#get_tree().change_scene("res://assets/world/World.tscn")
+	Transition.change_scene("res://assets/worlds/World.tscn")
 
 func Survival():
 	pass
 	
 func Return():
 	#get_tree().change_scene("res://assets/ui/main_menu/MainMenu.tscn")
-	Transition.change_scenes("res://assets/ui/main_menu/MainMenu.tscn")
+	Transition.change_scene("res://assets/ui/main_menu/MainMenu.tscn")

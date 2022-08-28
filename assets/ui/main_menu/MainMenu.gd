@@ -12,11 +12,11 @@ func _ready():
 
 func Play():
 	#get_tree().change_scene("res://assets/ui/main_menu/Play.tscn")
-	Transition.change_scenes("res://assets/ui/main_menu/Play.tscn")
+	Transition.change_scene("res://assets/ui/main_menu/Play.tscn")
 
 func Options():
 	#get_tree().change_scene("res://assets/ui/main_menu/Options.tscn")
-	Transition.change_scenes("res://assets/ui/main_menu/Options.tscn")
+	Transition.change_scene("res://assets/ui/main_menu/Options.tscn")
 
 func Exit():
 	get_tree().quit()

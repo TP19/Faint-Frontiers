@@ -10,11 +10,11 @@ config_version=4
 
 [application]
 
-config/name="Faint Frontiers Template"
+config/name="Faint Frontiers: Core"
+config/description="An experimental version of our action game with isometric perspective!"
 run/main_scene="res://assets/ui/main_menu/MainMenu.tscn"
 boot_splash/image="res://boot_splash.png"
-boot_splash/fullsize=false
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+boot_splash/bg_color=Color( 0.0392157, 0.0392157, 0.0392157, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,6 +23,7 @@ Global="*res://assets/worlds/World.gd"
 MenuAudio="*res://assets/ui/main_menu/MenuAudio.tscn"
 PlayerStats="*res://assets/characters/player/PlayerStats.gd"
 Transition="*res://assets/ui/hud/Transition.tscn"
+Keybindings="*res://assets/ui/main_menu/Keybindings.gd"
 
 [display]
 
@@ -63,7 +64,7 @@ ui_down={
 }
 menu={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777244,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 pause={
@@ -79,4 +80,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 1 )
 environment/default_environment="res://default_env.tres"

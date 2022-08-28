@@ -4,4 +4,5 @@
 font_path = "res://assets/ui/fonts/aquarius/Aquarius-Regular.otf"
 
 [resource]
+outline_color = Color( 1, 1, 1, 0.392157 )
 font_data = SubResource( 6 )

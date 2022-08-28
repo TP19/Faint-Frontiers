@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/ui/main_menu/logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/main_menu/main_menu_bg.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/fonts/aquarius_16.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/ui/main_menu/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://assets/music/forbidden planet.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/ui/intergalactic_theme.tres" type="Theme" id=6]
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://assets/ui/fonts/aquarius/Aquarius-Regular.otf"
@@ -23,6 +24,7 @@ font_data = SubResource( 2 )
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
