@@ -13,6 +13,7 @@ config_version=4
 config/name="Faint Frontiers Template"
 run/main_scene="res://assets/ui/main_menu/MainMenu.tscn"
 boot_splash/image="res://boot_splash.png"
+boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 

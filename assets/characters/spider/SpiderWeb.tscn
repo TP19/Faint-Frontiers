@@ -4,18 +4,22 @@
 [ext_resource path="res://assets/characters/spider/SpiderWeb.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 6, 6 )
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 6, 0, 6, 6 )
 
 [sub_resource type="AtlasTexture" id=3]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 12, 0, 6, 6 )
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 18, 0, 6, 6 )
 
@@ -31,21 +35,19 @@ animations = [ {
 radius = 1.88435
 
 [node name="Spider_Web" type="Area2D"]
-gravity = 100.0
 collision_mask = 64
+gravity = 100.0
 script = ExtResource( 2 )
 
 [node name="Fly" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "Web"
-frame = 3
 playing = true
 
 [node name="Hit" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 5 )
 animation = "Web"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

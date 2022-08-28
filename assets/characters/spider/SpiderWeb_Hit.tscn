@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/enemies/venom_spider/spider_web.png" type="Texture" id=1]
-[ext_resource path="res://assets/enemies/venom_spider/SpiderWeb_Hit.gd" type="Script" id=2]
+[ext_resource path="res://assets/characters/spider/spider_web.png" type="Texture" id=1]
+[ext_resource path="res://assets/characters/spider/SpiderWeb_Hit.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

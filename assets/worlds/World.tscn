@@ -104,8 +104,6 @@ __meta__ = {
 [node name="SpawnEnemy" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="Timer2" type="Timer" parent="SpawnEnemy"]
-
 [node name="Timer" type="Timer" parent="SpawnEnemy"]
 
 [node name="Tiles" type="TileMap" parent="."]
@@ -229,6 +227,5 @@ texture = ExtResource( 12 )
 expand = true
 flip_v = true
 
-[connection signal="timeout" from="SpawnEnemy/Timer2" to="SpawnEnemy" method="_on_Timer2_timeout"]
 [connection signal="timeout" from="SpawnEnemy/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpawnEnemy/Timer" to="SpawnEnemy" method="_on_Timer_timeout"]

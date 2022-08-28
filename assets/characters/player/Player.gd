@@ -7,13 +7,13 @@ export var ROLL_SPEED = 0.1
 
 enum {
 	MOVE,
-	ROLL,
-	ATTACK,
-	SHOOT,
-	DAMAGE,
-	SHIELD,
-	FREEZE,
-	DEATH
+	#ROLL,
+	#ATTACK,
+	#SHOOT,
+	#DAMAGE,
+	#SHIELD,
+	#FREEZE,
+	#DEATH
 }
 
 var state = MOVE
@@ -61,33 +61,33 @@ func _physics_process(delta):
 		MOVE:
 			move_state(delta)
 	
-		ROLL:
-			roll_state(delta)
-			#velocity != Vector2.ZERO
-			velocity = roll_vector * MAX_SPEED * ROLL_SPEED
-			
-		ATTACK:
-			attack_state(delta)
-			velocity = Vector2.ZERO
-			
-		SHOOT:
-			shoot_state(delta)
-
-		DAMAGE:
-			damage_state(delta)
-
-		SHIELD:
-			shield_state(delta)
-			
-		FREEZE:
-			animationState.travel("Idle")
-			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * 2000)
-			if Input.is_action_just_pressed("shield"):
-				state = SHIELD
-			
-		DEATH:
-			death_state(delta)
-			velocity = Vector2.ZERO
+#		ROLL:
+#			roll_state(delta)
+#			#velocity != Vector2.ZERO
+#			velocity = roll_vector * MAX_SPEED * ROLL_SPEED
+#
+#		ATTACK:
+#			attack_state(delta)
+#			velocity = Vector2.ZERO
+#
+#		SHOOT:
+#			shoot_state(delta)
+#
+#		DAMAGE:
+#			damage_state(delta)
+#
+#		SHIELD:
+#			shield_state(delta)
+#
+#		FREEZE:
+#			animationState.travel("Idle")
+#			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * 2000)
+#			if Input.is_action_just_pressed("shield"):
+#				state = SHIELD
+#
+#		DEATH:
+#			death_state(delta)
+#			velocity = Vector2.ZERO
 			
 	if stats.health <= 25:
 		stats.health += 0.05
@@ -127,18 +127,18 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
 	move()	
-	if Input.is_action_just_pressed("roll"):
-		state = ROLL
-		$dash.play()
-			
-	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
-		
-	if Input.is_action_just_pressed("shield"):
-		state = SHIELD
-		
-	if Input.is_action_just_pressed("shoot"):
-		state = SHOOT
+#	if Input.is_action_just_pressed("roll"):
+#		state = ROLL
+#		$dash.play()
+#
+#	if Input.is_action_just_pressed("attack"):
+#		state = ATTACK
+#
+#	if Input.is_action_just_pressed("shield"):
+#		state = SHIELD
+#
+#	if Input.is_action_just_pressed("shoot"):
+#		state = SHOOT
 
 # functions for each state
 func roll_state(delta):
@@ -153,11 +153,11 @@ func roll_state(delta):
 	$CollisionShape2D2.disabled = false
 	hurtbox.set_deferred("monitoring", true)
 			
-func attack_state(delta):
-	if stats.health <= 0:
-		state = DEATH
-	else:
-		animationState.travel("Attack")
+#func attack_state(delta):
+#	if stats.health <= 0:
+#		state = DEATH
+#	else:
+#		animationState.travel("Attack")
 
 func move():
 	velocity = move_and_slide(velocity)
@@ -166,10 +166,10 @@ func damage_state(delta):
 	$Sprite.modulate = Color(2, 1, 1)
 	modulate.a8 = 200
 	
-func shield_state(delta):
-	animationState.travel("Shield")
-	hurtbox.set_deferred("monitoring", false)
-	state = SHIELD
+#func shield_state(delta):
+#	animationState.travel("Shield")
+#	hurtbox.set_deferred("monitoring", false)
+#	state = SHIELD
 	
 	if Input.is_action_just_pressed("shield"):	
 		animationState.travel("Idle")
@@ -223,23 +223,23 @@ func _on_Hurtbox_area_entered(area):
 	yield(get_tree().create_timer(0.1),"timeout")
 	animationPlayer.play("FLASH")
 	
-	if state == SHIELD:
-		stats.health
+#	if state == SHIELD:
+#		stats.health
 
-	if stats.health <= 0:
-		stats.connect("no_health", self, "death_state")
-		state = DEATH
-		yield(get_tree().create_timer(1),"timeout")
-		get_tree().change_scene(GameScore)
-		queue_free()
-		show_score()
+#	if stats.health <= 0:
+#		stats.connect("no_health", self, "death_state")
+#		state = DEATH
+#		yield(get_tree().create_timer(1),"timeout")
+#		get_tree().change_scene(GameScore)
+#		queue_free()
+#		show_score()
 
 		
-func _on_Area2D_area_entered(Spider_Web):
-	state = FREEZE
-
-func _on_Area2D2_area_entered(Spider_Web):
-	state = FREEZE
+#func _on_Area2D_area_entered(Spider_Web):
+#	state = FREEZE
+#
+#func _on_Area2D2_area_entered(Spider_Web):
+#	state = FREEZE
 
 func impact_slowdown(time_scale, duration):
 	Engine.time_scale = time_scale
