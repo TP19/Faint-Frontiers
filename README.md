@@ -6,6 +6,6 @@ The repository has the complete godot project excluding the sprites and worlds a
  
 For the next releases, we will be mostly concetrating on improving these and adding more new characters. Feel free to fork it. We are happy for suggestions, bug reports and any contribution!
 
-A guide on design process of the game comming soon!
+A guide on design process of the game can be found here https://www.zonaincognita.com/posts/44
 
 **Play the released prototype with the newest game updates here: https://skydrifter.itch.io/faint-frontiers**
