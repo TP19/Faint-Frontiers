@@ -55,7 +55,7 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 547.0
+margin_right = 548.0
 margin_bottom = 55.0
 texture = ExtResource( 1 )
 stretch_mode = 4
@@ -65,7 +65,7 @@ __meta__ = {
 
 [node name="Play" type="Button" parent="Menu"]
 margin_top = 55.0
-margin_right = 547.0
+margin_right = 548.0
 margin_bottom = 121.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -76,7 +76,7 @@ flat = true
 
 [node name="Options" type="Button" parent="Menu"]
 margin_top = 121.0
-margin_right = 547.0
+margin_right = 548.0
 margin_bottom = 187.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -87,7 +87,7 @@ flat = true
 
 [node name="Exit" type="Button" parent="Menu"]
 margin_top = 187.0
-margin_right = 547.0
+margin_right = 548.0
 margin_bottom = 253.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -98,12 +98,12 @@ flat = true
 
 [node name="About" type="Label" parent="Menu"]
 margin_top = 253.0
-margin_right = 547.0
+margin_right = 548.0
 margin_bottom = 278.0
 size_flags_vertical = 1
 custom_colors/font_color = Color( 1, 1, 1, 0.27451 )
 custom_fonts/font = ExtResource( 3 )
-text = "Version: 0.1.0-dev  @ acidghost & CriPon3  "
+text = "Version: 2022.35.0  @ acidghost & CriPon3  "
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
