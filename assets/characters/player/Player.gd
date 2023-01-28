@@ -22,6 +22,7 @@ var roll_vector = Vector2.ZERO
 var stats = PlayerStats
 var motion = Vector2.ZERO
 var screen_pos = Vector2()
+var base_health = 5
 
 onready var MainMenu = "res://assets/ui/main_menu/MainMenu.tscn"
 onready var GameScore = "res://assets/ui/hud/GameOver.tscn"
@@ -88,9 +89,22 @@ func _physics_process(delta):
 #			death_state(delta)
 #			velocity = Vector2.ZERO
 			
-	if stats.health <= 25:
-		stats.health += 0.05
+#	if stats.health <= 25:
+#		stats.health += 0.05
+#		print(stats.health)
+		
+	if stats.health <= 0:
+		stats.health += 10.05
 		print(stats.health)
+	
+		
+	if Global.elapsed_time <= 0:
+		Global.elapsed_time = 0.017
+		base_health()
+		
+		
+func base_health():
+	stats.health = base_health
 
 # movement controlls and animations
 func move_state(delta):
@@ -245,11 +259,12 @@ func impact_slowdown(time_scale, duration):
 	yield(get_tree().create_timer(duration * time_scale), "timeout")
 	Engine.time_scale = 1.0
 
-# randomize the music everytime player is up for new game	
+# randomize the music everytime player is up for new game
 # thanks https://www.youtube.com/watch?v=nIGJ6ImzSuI
 func _ready():
 	Global.points = 0
-	Global.elapsed_time = 0
+	Global.elapsed_time = 20
+	
 	
 	var audioFiles = []
 	audioFiles.append(preload("res://assets/music/skyline5.ogg"))
